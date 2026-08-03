@@ -4,7 +4,6 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
-    <link rel="icon" href="data:,">
     <style>
         html, body { margin: 0; padding: 0; height: 100%; }
     </style>
@@ -39,7 +38,7 @@ var clusterer = new kakao.maps.MarkerClusterer({
     //지도 레벨이 10 이상(=10보다 더 축소된 상태)일 때만 마커들을 클러스터로 묶어서 표시하라는 뜻
 });
 
-fetch('/api/camping')
+fetch('basedList.json')
     .then(response => response.json())
     .then(data => {
         var items = (data.response && data.response.body && data.response.body.items && data.response.body.items.item) || [];
